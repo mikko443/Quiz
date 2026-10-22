@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Welcome to the Quiz!</h1>
+            <p>Test your knowledge with these 5 questions.</p>
+            <button id="start-btn" class="btn primary-btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="header-info">
+                    <span id="question-count">Question 1/5</span>
+                    <div class="timer-container">
+                        <span class="timer-icon">⏱️</span>
+                        <span id="timer">15</span>s
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text">Question goes here?</h2>
+            </div>
+
+            <div class="options-container" id="options-container">
+                <!-- Options will be injected here -->
+            </div>
+
+            <div class="quiz-footer">
+                <button id="prev-btn" class="btn secondary-btn" disabled>Previous</button>
+                <button id="next-btn" class="btn primary-btn">Next</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen hidden">
+            <div class="result-card">
+                <div class="icon-container">
+                    <span id="result-icon">🏆</span>
+                </div>
+                <h2 id="result-title">Excellent!</h2>
+                <p class="score-text">You scored <span id="score">0</span> out of <span id="total-questions">5</span>
+                </p>
+
+                <div class="stats-container">
+                    <div class="stat-box correct">
+                        <span class="stat-value" id="correct-answers">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                    <div class="stat-box wrong">
+                        <span class="stat-value" id="wrong-answers">0</span>
+                        <span class="stat-label">Wrong</span>
+                    </div>
+                </div>
+
+                <button id="view-corrections-btn" class="btn secondary-btn" style="margin-bottom: 10px;">View
+                    Corrections</button>
+                <button id="restart-btn" class="btn primary-btn">Restart Quiz</button>
+            </div>
+        </div>
+
+        <!-- Corrections Screen -->
+        <div id="corrections-screen" class="screen hidden">
+            <h2 style="margin-bottom: 20px; text-align: center;">Corrections</h2>
+            <div id="corrections-container" class="corrections-list">
+                <!-- Corrections will be injected here -->
+            </div>
+            <div class="quiz-footer" style="margin-top: 20px;">
+                <button id="back-to-results-btn" class="btn secondary-btn">Back</button>
+                <button id="restart-from-corrections-btn" class="btn primary-btn">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
